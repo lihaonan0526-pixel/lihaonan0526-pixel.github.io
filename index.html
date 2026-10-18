@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#0f5c4a">
+<title>CuteSource · Pet Service Waiver &amp; Consent</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f5c4a'/%3E%3Ctext x='50' y='70' font-size='58' text-anchor='middle' fill='%23fff' font-family='Georgia,serif'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#0f5c4a; --green-050:#eef7f4; --green-100:#d8ece5; --green-700:#0b4638;
+  --cream:#fbf9f4; --ink:#1c2320; --muted:#5f6b66; --line:#e3ded2;
+  --red:#b3261e; --amber:#8a5200; --amber-bg:#fdf3e0;
+  --shadow:0 1px 2px rgba(28,35,32,.06),0 8px 24px -12px rgba(28,35,32,.18);
+  --radius:14px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Inter","Noto Sans SC",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink); background:var(--cream); font-size:16px; line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+}
+button{font-family:inherit}
+a{color:var(--green)}
+
+/* ---------- 顶部 ---------- */
+.topbar{position:sticky;top:0;z-index:40;background:rgba(251,249,244,.94);
+  backdrop-filter:saturate(160%) blur(12px);-webkit-backdrop-filter:saturate(160%) blur(12px);
+  border-bottom:1px solid var(--line)}
+.topbar-in{max-width:1080px;margin:0 auto;padding:11px 20px;display:flex;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.1px;font-size:16px}
+.paw-badge{width:36px;height:36px;border-radius:11px;background:var(--green);display:grid;place-items:center;color:#fff;flex:0 0 auto}
+.paw-badge svg{width:21px;height:21px}
+.brand small{display:block;font-weight:500;font-size:11.5px;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;line-height:1.2;margin-top:1px}
+.spacer{flex:1}
+.lang-toggle{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:#fff}
+.lang-toggle button{border:0;background:transparent;padding:7px 14px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;letter-spacing:.5px;transition:.15s}
+.lang-toggle button.on{background:var(--green);color:#fff}
+.ghost-btn{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;
+  padding:8px 15px;font-size:13.5px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.15s;white-space:nowrap}
+.ghost-btn:hover{border-color:var(--green);color:var(--green)}
+.ghost-btn svg{width:15px;height:15px}
+@media(max-width:560px){.brand small{display:none}.brand{font-size:15px}.topbar-in{padding:9px 14px;gap:7px}.ghost-btn{padding:7px 10px;font-size:12.5px}}
+
+/* ---------- 布局 ---------- */
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 130px}
+.hero{margin-bottom:22px}
+.eyebrow{font-size:11.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--green);font-weight:700;margin-bottom:9px}
+h1{font-family:"Inter",sans-serif;font-size:31px;line-height:1.25;margin:0 0 6px;letter-spacing:-.6px;font-weight:700}
+h1 .en{display:block;font-family:"Noto Sans SC",sans-serif;font-size:16px;font-weight:500;color:var(--muted);margin-top:8px;letter-spacing:0}
+body.zh h1{font-family:"Noto Serif SC",serif;font-size:28px;letter-spacing:-.2px}
+body.zh h1 .en{font-family:"Inter",sans-serif;font-weight:600;font-size:15px}
+.lede{color:var(--muted);font-size:15.5px;margin:12px 0 0;max-width:66ch}
+.meta-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
+.chip{font-size:13px;padding:5px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--muted);display:inline-flex;gap:6px;align-items:center}
+.chip b{color:var(--ink);font-weight:600}
+.chip.hot{background:var(--green-050);border-color:var(--green-100);color:var(--green-700)}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.layout{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:900px){.layout{grid-template-columns:1fr 300px}}
+
+
+/* ---------- 宠物类型选择 ---------- */
+.species-pick{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;
+  margin-bottom:18px;box-shadow:var(--shadow)}
+.sp-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.sp-row{grid-template-columns:1fr}}
+.sp-opt{display:flex;align-items:center;gap:13px;border:2px solid var(--line);border-radius:13px;
+  padding:15px 17px;background:#fdfcfa;cursor:pointer;transition:.16s;text-align:left;font-family:inherit}
+.sp-opt:hover{border-color:var(--green-100);background:#fff}
+.sp-opt.on{border-color:var(--green);background:var(--green-050);box-shadow:0 0 0 4px rgba(15,92,74,.07)}
+.sp-ic{width:44px;height:44px;border-radius:12px;background:#fff;border:1px solid var(--line);
+  display:grid;place-items:center;color:var(--muted);flex:0 0 auto;transition:.16s}
+.sp-opt.on .sp-ic{background:var(--green);border-color:var(--green);color:#fff}
+.sp-ic svg{width:27px;height:27px}
+.sp-t{display:block;font-size:17px;font-weight:800;letter-spacing:-.2px;line-height:1.25}
+.sp-sub{display:block;font-size:12.5px;color:var(--muted);margin-top:1px}
+.sp-opt.on .sp-sub{color:var(--green-700)}
+.sp-hint{margin:12px 0 0;font-size:12.5px;color:var(--muted);text-align:center;line-height:1.6}
+/* 类型徽标 */
+.sp-badge{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;
+  padding:3px 9px;border-radius:99px;background:var(--green-050);color:var(--green);border:1px solid var(--green-100)}
+.sp-badge svg{width:13px;height:13px}
+
+/* ---------- 查档 ---------- */
+.lookup{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:#fff;border:1px solid var(--line);
+  border-radius:var(--radius);padding:13px 15px;margin-bottom:18px;box-shadow:var(--shadow)}
+.lookup .lk-txt{font-size:13.5px;color:var(--muted);flex:1;min-width:170px;line-height:1.5}
+.lookup .lk-txt b{color:var(--ink);display:block;font-size:14.5px;margin-bottom:1px}
+.lookup input{max-width:210px;padding:11px 13px;border:1px solid var(--line);border-radius:9px;font-size:15px;font-family:inherit;background:#fdfcfa;outline:none}
+.lookup input:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(15,92,74,.1)}
+.btn-sm{background:var(--green);color:#fff;border:0;border-radius:9px;padding:11px 18px;font-size:14px;font-weight:700;cursor:pointer}
+.btn-sm.soft{background:var(--green-050);color:var(--green);border:1px solid var(--green-100)}
+
+.banner{display:none;gap:12px;align-items:flex-start;background:var(--green-050);border:1px solid var(--green-100);
+  border-radius:12px;padding:14px 16px;margin-bottom:18px;font-size:14px;line-height:1.6}
+.banner.show{display:flex}
+.banner.warn{background:var(--amber-bg);border-color:#f2dfb5;color:#3d2c08}
+.banner .bi{width:23px;height:23px;flex:0 0 auto;color:var(--green);margin-top:1px}
+.banner.warn .bi{color:var(--amber)}
+.banner b{color:var(--green-700)}
+.banner.warn b{color:var(--amber)}
+.banner .btns{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
+
+/* ---------- 步骤 ---------- */
+section.step{padding:24px 26px;border-bottom:1px solid var(--line)}
+section.step:last-child{border-bottom:0}
+.step-head{display:flex;align-items:center;gap:12px;margin-bottom:17px}
+.step-num{width:29px;height:29px;border-radius:50%;background:var(--green-050);color:var(--green);
+  display:grid;place-items:center;font-weight:700;font-size:13.5px;flex:0 0 auto;border:1px solid var(--green-100)}
+.step-title{font-weight:700;font-size:17.5px;margin:0;line-height:1.35}
+.step-title span{display:block;font-weight:500;font-size:11.5px;color:var(--muted);letter-spacing:.8px;text-transform:uppercase}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.grid .full{grid-column:1/-1}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.grid .full{grid-column:auto}}
+.field{display:flex;flex-direction:column;gap:7px}
+.field label{font-size:14px;font-weight:600;color:#2f3b36;letter-spacing:.1px}
+.field label em{font-style:normal;color:var(--red);margin-left:3px}
+.field .hint{font-size:12.5px;color:var(--muted);font-weight:400}
+input[type=text],input[type=tel],input[type=email],input[type=date],input[type=month],select,textarea{
+  width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fdfcfa;
+  font-size:16px;font-family:inherit;color:var(--ink);transition:.15s;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--green);background:#fff;box-shadow:0 0 0 3px rgba(15,92,74,.10)}
+input.err,select.err,textarea.err{border-color:var(--red);background:#fff8f7}
+textarea{resize:vertical;min-height:74px}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{border:1px solid var(--line);border-radius:10px;padding:9px 16px;font-size:14px;font-weight:600;
+  cursor:pointer;background:#fdfcfa;color:#3f4b46;transition:.15s;user-select:none}
+.seg input:checked + label{background:var(--green);border-color:var(--green);color:#fff}
+
+
+/* 宠物卡片 */
+.pets-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:13px;flex-wrap:wrap}
+.pets-head p{margin:0;font-size:13.5px;color:var(--muted)}
+.pet-card{border:1px solid var(--line);border-radius:12px;padding:17px;margin-bottom:13px;background:#fdfcfa;position:relative}
+.pet-card .pc-head{display:flex;align-items:center;gap:8px;margin-bottom:13px}
+.pet-card .pc-head b{font-size:12.5px;letter-spacing:.7px;text-transform:uppercase;color:var(--green-700)}
+.pet-card .rm{margin-left:auto;border:0;background:none;color:#9a9384;font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.pet-card .rm:hover{color:var(--red)}
+.pet-card .grid{grid-template-columns:1fr 1fr;gap:13px}
+@media(max-width:600px){.pet-card .grid{grid-template-columns:1fr}}
+
+/* 条款 */
+.terms-box{max-height:400px;overflow-y:auto;border:1px solid var(--line);border-radius:12px;
+  padding:8px 22px 12px;background:#fdfcfa;font-size:15px;color:#2b3531;line-height:1.68}
+.terms-box::-webkit-scrollbar{width:8px}
+.terms-box::-webkit-scrollbar-thumb{background:#d6d0c3;border-radius:8px}
+.terms-box ol{padding-left:22px;margin:15px 0}
+.terms-box li{margin-bottom:15px}
+.terms-box li b{color:var(--green-700);font-weight:700}
+.terms-box p{margin:13px 0}
+.terms-box .zh-note{display:block;color:var(--muted);font-size:13.5px;margin-top:6px;line-height:1.66;
+  border-left:2px solid var(--green-100);padding-left:10px}
+.scroll-cue{font-size:12.5px;color:var(--muted);text-align:right;margin-top:7px}
+
+.checks{display:flex;flex-direction:column;gap:13px}
+.check{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.6;cursor:pointer;padding:2px}
+.check input[type=checkbox]{appearance:none;-webkit-appearance:none;width:22px;height:22px;flex:0 0 auto;margin:2px 0 0;
+  border:1.5px solid #c7c0b1;border-radius:6px;background:#fff;cursor:pointer;position:relative;transition:.15s}
+.check input[type=checkbox]:checked{background:var(--green);border-color:var(--green)}
+.check input[type=checkbox]:checked::after{content:"";position:absolute;left:7px;top:3px;width:5px;height:10px;
+  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.check .txt em{font-style:normal;color:var(--red)}
+.check small{display:block;color:var(--muted);font-size:13px;margin-top:3px}
+
+/* 签名 */
+.sig-wrap{position:relative;border:1.5px dashed #c9c2b3;border-radius:12px;background:
+  linear-gradient(#fff,#fff) padding-box,repeating-linear-gradient(0deg,transparent 0 38px,#f3efe6 38px 39px);
+  height:200px;overflow:hidden;touch-action:none;cursor:crosshair}
+.sig-wrap.signed{border-style:solid;border-color:var(--green-100);background:#fff}
+.sig-wrap canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.sig-baseline{position:absolute;left:26px;right:26px;bottom:44px;border-bottom:1px solid #ddd7c9;pointer-events:none}
+.sig-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  color:#b3ab9c;font-size:14px;gap:6px;pointer-events:none;text-align:center;padding:0 24px}
+.sig-placeholder svg{width:28px;height:28px;opacity:.7}
+.sig-actions{display:flex;justify-content:space-between;align-items:center;margin-top:9px;gap:10px;flex-wrap:wrap}
+.sig-caption{font-size:13.5px;color:var(--muted)}
+.sig-caption b{color:var(--ink)}
+.link-btn{border:0;background:none;color:var(--red);font-size:13.5px;font-weight:600;cursor:pointer;padding:4px 0;
+  text-decoration:underline;text-underline-offset:3px}
+.sig-err{color:var(--red);font-size:13.5px;margin-top:6px;display:none}
+
+/* 侧栏 */
+.aside{position:sticky;top:78px;display:flex;flex-direction:column;gap:14px}
+.aside .card{padding:19px}
+.aside h3{font-size:11.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted);margin:0 0 13px;font-weight:700}
+.summary dl{margin:0;display:grid;grid-template-columns:78px 1fr;gap:9px 10px;font-size:14px}
+.summary dt{color:var(--muted)}
+.summary dd{margin:0;font-weight:600;word-break:break-word}
+.summary .empty{color:#b9b2a4;font-weight:400}
+.progress{height:6px;border-radius:99px;background:#efeae0;overflow:hidden;margin:15px 0 8px}
+.progress i{display:block;height:100%;background:var(--green);width:0;transition:width .35s cubic-bezier(.4,0,.2,1)}
+.progress-txt{font-size:13px;color:var(--muted);display:flex;justify-content:space-between}
+.notice{font-size:13px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px;line-height:1.65}
+.notice b{color:var(--ink)}
+
+/* 底栏 */
+.actionbar{position:fixed;left:0;right:0;bottom:0;z-index:45;background:rgba(255,255,255,.95);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  padding:12px 20px calc(12px + env(safe-area-inset-bottom))}
+.actionbar-in{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:14px}
+.actionbar .status{font-size:13.5px;color:var(--muted);flex:1;min-width:0}
+.actionbar .status b{color:var(--ink)}
+.btn-primary{background:var(--green);color:#fff;border:0;border-radius:11px;padding:14px 28px;font-size:16px;font-weight:700;
+  cursor:pointer;box-shadow:0 6px 16px -8px rgba(15,92,74,.7);transition:.15s;white-space:nowrap;letter-spacing:-.1px}
+.btn-primary:hover{background:var(--green-700)}
+.btn-primary:disabled{background:#c9cfcb;box-shadow:none;cursor:not-allowed}
+.btn-soft{background:var(--green-050);color:var(--green);border:1px solid var(--green-100);border-radius:11px;
+  padding:12px 20px;font-weight:600;font-size:15px;cursor:pointer}
+
+/* 成功页 */
+.done{display:none;padding:54px 20px}
+.done.show{display:block}
+.done-card{max-width:580px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:20px;
+  padding:40px 32px;text-align:center;box-shadow:var(--shadow)}
+.done-ic{width:64px;height:64px;border-radius:50%;background:var(--green-050);color:var(--green);
+  display:grid;place-items:center;margin:0 auto 17px}
+.done-ic svg{width:31px;height:31px}
+.done h2{margin:0 0 7px;font-size:25px;letter-spacing:-.4px}
+.done p{color:var(--muted);font-size:15px;margin:0 0 21px}
+.ref-box{background:#fdfcfa;border:1px dashed var(--line);border-radius:12px;padding:15px;margin-bottom:14px}
+.ref-box span{display:block;font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted)}
+.ref-box strong{font-size:22px;letter-spacing:1.8px;font-family:"Inter",monospace}
+.next-note{background:var(--green-050);border:1px solid var(--green-100);border-radius:12px;padding:14px 16px;
+  font-size:14px;text-align:left;color:var(--green-700);margin-bottom:21px;line-height:1.6}
+.next-note b{display:block;margin-bottom:2px}
+.done-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
+/* 抽屉 */
+.drawer-mask{position:fixed;inset:0;background:rgba(20,28,24,.35);opacity:0;pointer-events:none;transition:.2s;z-index:60}
+.drawer-mask.show{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(490px,100%);background:var(--cream);z-index:61;
+  transform:translateX(101%);transition:transform .28s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;
+  box-shadow:-20px 0 40px -20px rgba(0,0,0,.3)}
+.drawer.show{transform:translateX(0)}
+.drawer-head{padding:15px 17px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;background:#fff}
+.drawer-head h3{margin:0;font-size:16.5px;flex:1}
+.drawer-search{padding:11px 15px;background:#fff;border-bottom:1px solid var(--line)}
+.drawer-search input{width:100%;padding:10px 13px;border:1px solid var(--line);border-radius:9px;font-size:15px;
+  font-family:inherit;background:#fdfcfa;outline:none}
+.drawer-search input:focus{border-color:var(--green)}
+.drawer-body{flex:1;overflow-y:auto;padding:13px 15px 30px}
+.rec{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 15px;margin-bottom:10px;
+  display:flex;gap:12px;align-items:flex-start;cursor:pointer;transition:.15s}
+.rec:hover{border-color:var(--green-100);box-shadow:0 4px 14px -8px rgba(15,92,74,.35)}
+.rec-av{width:39px;height:39px;border-radius:10px;background:var(--green-050);color:var(--green);display:grid;place-items:center;flex:0 0 auto}
+.rec-main{flex:1;min-width:0}
+.rec-main b{font-size:15px;display:block}
+.rec-main small{font-size:13.5px;color:var(--muted);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rec-meta{font-size:11.5px;color:#a49c8c;margin-top:3px;font-variant-numeric:tabular-nums}
+.rec-tag{font-size:10.5px;font-weight:700;letter-spacing:.5px;padding:2px 7px;border-radius:99px;background:var(--green-050);color:var(--green);white-space:nowrap}
+.rec-tag.cat{background:#f4efff;color:#6b4fbb}
+.empty-state{text-align:center;color:var(--muted);padding:46px 20px;font-size:13.5px;line-height:1.8}
+.empty-state svg{width:40px;height:40px;opacity:.35;margin-bottom:10px}
+.drawer-foot{padding:11px 15px calc(13px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:#fff;font-size:12.5px;color:var(--muted);text-align:center}
+
+@media print{
+  .topbar,.actionbar,.aside,.ghost-btn,.sig-actions,.lang-toggle,.drawer,.drawer-mask,.lookup,.banner{display:none!important}
+  .wrap{padding:0}.card{box-shadow:none;border:0}
+  .terms-box{max-height:none;border:0;padding:0}
+}
+#formView.hide{display:none}
+.fade-in{animation:fade .3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body class="en">
+
+<header class="topbar">
+  <div class="topbar-in">
+    <div class="brand">
+      <div class="paw-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="6" cy="9" rx="2.1" ry="2.7"/><ellipse cx="10.4" cy="6.3" rx="2.1" ry="2.9"/><ellipse cx="15.2" cy="6.6" rx="2.1" ry="2.9"/><ellipse cx="19" cy="9.6" rx="2" ry="2.6"/><path d="M12.5 11.2c-3 0-6 2.4-6 5.3 0 2 1.5 3.2 3.2 3.2 1.2 0 2-.5 2.8-.5s1.6.5 2.8.5c1.7 0 3.2-1.2 3.2-3.2 0-2.9-3-5.3-6-5.3z"/></svg>
+      </div>
+      <div>
+        <span>CuteSource</span>
+        <small data-i18n="brand.sub">Waiver &amp; Consent</small>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="en" class="on">EN</button>
+      <button type="button" data-lang="zh">中文</button>
+    </div>
+    <button class="ghost-btn" type="button" id="openRecords">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/></svg>
+      <span data-i18n="records">Customers</span>
+    </button>
+  </div>
+</header>
+
+<main class="wrap" id="formView">
+  <div class="hero">
+    <div class="eyebrow" data-i18n="eyebrow">Singapore · Pet Grooming</div>
+    <h1>
+      <span data-i18n="h1">Pet Service Waiver &amp; Consent Form</span>
+      <span class="en" data-i18n="h1.sub">宠物服务免责声明与同意书</span>
+    </h1>
+    <p class="lede" data-i18n="lede" data-sp="lede">
+      Sign once to create a long-term customer file. On future visits, we simply look you up by mobile number — no need to sign again. You can update your dog's details at any time.
+    </p>
+    <div class="meta-chips">
+      <span class="chip hot"><b data-i18n="chip.once">Sign once · Valid ongoing</b></span>
+      <span class="chip"><b data-i18n="chip.phone">Lookup by mobile</b></span>
+      <span class="chip"><b data-i18n="chip.pdpa">PDPA compliant</b></span>
+    </div>
+  </div>
+
+
+  <!-- 宠物类型选择 -->
+  <div class="species-pick" id="speciesPick">
+    <div class="sp-row">
+      <button type="button" class="sp-opt" data-species="dog">
+        <span class="sp-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 5.2 7.5 2.6 5.8 5.5M14 5.2l2.5-2.6 1.7 2.9"/>
+            <path d="M12 5.2c-3.4 0-6 2.5-6 6.1 0 1.6.5 3 1.4 4.1-.7.6-1.1 1.5-1.1 2.4 0 .8.4 1.5 1.1 1.9V21c0 .6.5 1 1 1h7.2c.5 0 1-.4 1-1v-1.3c.7-.4 1.1-1.1 1.1-1.9 0-.9-.4-1.8-1.1-2.4.9-1.1 1.4-2.5 1.4-4.1 0-3.6-2.6-6.1-6-6.1Z"/>
+            <circle cx="10" cy="10.3" r=".9" fill="currentColor" stroke="none"/>
+            <circle cx="14" cy="10.3" r=".9" fill="currentColor" stroke="none"/>
+            <path d="M12 13.4v.9M12 14.3c-.6.7-1.4.7-2 .2M12 14.3c.6.7 1.4.7 2 .2"/>
+          </svg>
+        </span>
+        <span class="sp-t" data-sp-t="dog">Dog</span>
+        <span class="sp-sub" data-i18n="sp.dogsub">狗狗美容</span>
+      </button>
+      <button type="button" class="sp-opt" data-species="cat">
+        <span class="sp-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.2 9.5 4 3.6l4.3 3.1a9 9 0 0 1 7.4 0L20 3.6l-.2 5.9"/>
+            <path d="M12 6.8c-3.9 0-7 2.8-7 6.4 0 4 3.1 6.6 7 6.6s7-2.6 7-6.6c0-3.6-3.1-6.4-7-6.4Z"/>
+            <path d="M9.4 11.2c.5-.6 1.2-.6 1.7 0M12.9 11.2c.5-.6 1.2-.6 1.7 0"/>
+            <path d="M12 13.6v.7M12 14.3c-.5.5-1.1.5-1.6.1M12 14.3c.5.5 1.1.5 1.6.1"/>
+            <path d="M3 13.5h2.2M3 16h2.2M21 13.5h-2.2M21 16h-2.2" opacity=".7"/>
+          </svg>
+        </span>
+        <span class="sp-t" data-sp-t="cat">Cat</span>
+        <span class="sp-sub" data-i18n="sp.catsub">猫咪美容</span>
+      </button>
+    </div>
+    <p class="sp-hint" data-i18n="sp.hint">请选择本次签署的宠物类型，条款会随之调整。同一主人可同时拥有猫和狗，各自建档。</p>
+  </div>
+
+  <div class="lookup" id="lookupBar">
+    <div class="lk-txt">
+      <b data-i18n="lk.title">Returning customer? Find your file</b>
+      <span data-i18n="lk.sub">Enter your mobile number — no need to sign again.</span>
+    </div>
+    <input type="tel" id="lookupPhone" inputmode="numeric" placeholder="Mobile number" data-i18n-ph="lk.ph">
+    <button class="btn-sm" type="button" id="btnLookup" data-i18n="lk.btn">Find file</button>
+  </div>
+
+  <div class="banner" id="banner">
+    <svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12.5l2 2 4-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div style="flex:1;min-width:0" id="bannerTxt"></div>
+  </div>
+
+  <div class="layout">
+    <form class="card" id="waiverForm" novalidate autocomplete="on">
+
+      <section class="step">
+        <div class="step-head">
+          <div class="step-num">1</div>
+          <h2 class="step-title"><span data-i18n="s1.eyebrow">Owner</span><span data-i18n="s1.title">Your details</span></h2>
+        </div>
+        <div class="grid">
+          <div class="field">
+            <label for="ownerName" data-i18n="f.ownerName">Full name<em>*</em></label>
+            <input type="text" id="ownerName" name="ownerName" required placeholder="As per NRIC / FIN" data-i18n-ph="f.ownerName.ph">
+          </div>
+          <div class="field">
+            <label for="mobile" data-i18n="f.mobile">Mobile number<em>*</em></label>
+            <input type="tel" id="mobile" name="mobile" required inputmode="numeric" placeholder="+65 9XXX XXXX">
+          </div>
+        </div>
+      </section>
+
+      <section class="step">
+        <div class="step-head">
+          <div class="step-num">2</div>
+          <h2 class="step-title"><span data-i18n="s2.eyebrow">Pets</span><span data-i18n="s2.title" data-sp="s2.title">Your dog(s)</span></h2>
+        </div>
+        <div class="pets-head">
+          <p data-i18n="pets.tip" data-sp="pets.tip">You may register more than one dog.</p>
+          <button type="button" class="btn-sm soft" id="addPet" data-i18n="pets.add" data-sp="pets.add">+ Add dog</button>
+        </div>
+        <div id="petList"></div>
+      </section>
+
+      <section class="step">
+        <div class="step-head">
+          <div class="step-num">3</div>
+          <h2 class="step-title"><span data-i18n="s4.eyebrow">Terms</span><span data-i18n="s4.title">Terms &amp; conditions</span></h2>
+        </div>
+        <div class="terms-box">
+          <p data-i18n="terms.intro"></p>
+          <ol id="termsList"></ol>
+          <p style="text-align:left;font-size:12.5px;color:var(--muted)" data-i18n="terms.ver">Version 3.0</p>
+        </div>
+        <div class="scroll-cue" data-i18n="scrollCue">↕ Scroll to read the full terms</div>
+      </section>
+
+      <section class="step">
+        <div class="step-head">
+          <div class="step-num">4</div>
+          <h2 class="step-title"><span data-i18n="s5.eyebrow">Acknowledgement</span><span data-i18n="s5.title">Please confirm</span></h2>
+        </div>
+        <div class="checks">
+          <label class="check"><input type="checkbox" id="ck1" required>
+            <span class="txt" data-i18n="ck1">I have read and understood all the terms above and agree to be bound by them.<em>*</em></span></label>
+          <label class="check"><input type="checkbox" id="ck2" required>
+            <span class="txt" data-i18n="ck2">I confirm that the health, behaviour and vaccination information provided is true and complete, and I will inform the Provider of any change.<em>*</em></span></label>
+          <label class="check"><input type="checkbox" id="ck3" required>
+            <span class="txt" data-i18n="ck3" data-sp="ck3">I am the owner of the registered dog(s), or an authorised representative.<em>*</em></span></label>
+          <label class="check"><input type="checkbox" id="ck4">
+            <span class="txt"><span data-i18n="ck4" data-sp="ck4">I consent to my dog being photographed or filmed for service records and promotional use.</span>
+            <small data-i18n="ck4.small">Optional · does not affect service</small></span></label>
+        </div>
+      </section>
+
+      <section class="step">
+        <div class="step-head">
+          <div class="step-num">5</div>
+          <h2 class="step-title"><span data-i18n="s6.eyebrow">Signature</span><span data-i18n="s6.title">Sign below</span></h2>
+        </div>
+        <div class="sig-wrap" id="sigWrap">
+          <canvas id="sigCanvas"></canvas>
+          <div class="sig-baseline"></div>
+          <div class="sig-placeholder" id="sigPlaceholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 18c3.5 0 4.2-9 7-9s1.5 9 4.5 9S19 9 21 6" stroke-linecap="round"/></svg>
+            <span data-i18n="sig.hint">Sign here with your finger or mouse</span>
+          </div>
+        </div>
+        <div class="sig-actions">
+          <span class="sig-caption"><b data-i18n="sig.name">Signed by: </b><span id="sigNamePreview">—</span></span>
+          <button type="button" class="link-btn" id="clearSig" data-i18n="sig.clear">Clear</button>
+        </div>
+        <div class="sig-err" id="sigErr" data-i18n="sig.err">Please sign first.</div>
+      </section>
+    </form>
+
+    <aside class="aside">
+      <div class="card summary">
+        <h3 data-i18n="sum.title">Summary</h3>
+        <dl>
+          <dt data-i18n="sum.owner">Owner</dt><dd id="sumOwner" class="empty">—</dd>
+          <dt data-i18n="sum.pets" data-sp="sum.pets">Dogs</dt><dd id="sumPet" class="empty">—</dd>
+          <dt data-i18n="sum.phone">Mobile</dt><dd id="sumPhone" class="empty">—</dd>
+        </dl>
+        <div class="progress"><i id="progBar"></i></div>
+        <div class="progress-txt"><span data-i18n="sum.progress">Progress</span><span id="progTxt">0%</span></div>
+      </div>
+      <div class="notice" data-i18n="notice"></div>
+    </aside>
+  </div>
+</main>
+
+<div class="done" id="doneView">
+  <div class="done-card fade-in">
+    <div class="done-ic">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12.5l5 5L20 6.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h2 id="doneTitle" data-i18n="done.title">Customer file created</h2>
+    <p data-i18n="done.sub">You have signed once and will not need to sign again on future visits.</p>
+    <div class="ref-box">
+      <span data-i18n="done.ref">Customer ID</span>
+      <strong id="doneRef">—</strong>
+    </div>
+    <div class="next-note">
+      <b data-i18n="done.nextTitle">Next visit</b>
+      <span data-i18n="done.nextBody">Enter your mobile number on the main page and tap “Find file” — that's it.</span>
+    </div>
+    <div class="done-actions">
+      <button class="btn-primary" type="button" id="dlPdf" data-i18n="done.pdf">Download PDF</button>
+      <button class="btn-soft" type="button" id="newForm" data-i18n="done.new">Next customer</button>
+    </div>
+  </div>
+</div>
+
+<div class="actionbar" id="actionBar">
+  <div class="actionbar-in">
+    <div class="status"><span data-i18n="bar.status">Complete the required fields and sign</span><b id="barPct"></b></div>
+    <button class="btn-primary" type="submit" form="waiverForm" id="submitBtn" data-i18n="bar.submit">Submit &amp; save</button>
+  </div>
+</div>
+
+<div class="drawer-mask" id="mask"></div>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+  <div class="drawer-head">
+    <h3 id="drawerTitle" data-i18n="rec.title">Customer files</h3>
+    <button class="ghost-btn" type="button" id="expCsv" data-i18n="rec.csv">Export CSV</button>
+    <button class="ghost-btn" type="button" id="closeDrawer" aria-label="Close">✕</button>
+  </div>
+  <div class="drawer-search">
+    <input type="text" id="recSearch" placeholder="Search name / mobile / pet name" data-i18n-ph="rec.search">
+  </div>
+  <div class="drawer-body" id="recList"></div>
+  <div class="drawer-foot" id="drawerFoot"></div>
+</div>
+
+<input type="text" id="sigData" class="sr" tabindex="-1" aria-hidden="true">
+
+<script>
+/* =====================================================================
+   CuteSource Waiver v3 — English primary / Chinese secondary
+   One-time signature, long-term customer file
+   ===================================================================== */
+const STORE_KEY = 'cutesource_owners_v3';
+const OLD_KEYS  = ['pawstay_owners_v2', 'pawstay_waivers_v1'];
+const VERSION   = 'v3.0';
+
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const pad = n => String(n).padStart(2, '0');
+const nowStamp = (d = new Date()) => `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
+const fmtDate = s => { if (!s) return ''; const p = s.split('-'); return `${p[2]}/${p[1]}/${p[0]}`; };
+const fmtMonth = s => { if (!s) return ''; const p = s.split('-'); return `${p[1]}/${p[0]}`; };
+function fmtDateTime(iso) { const d = new Date(iso); return `${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()} ${pad(d.getHours())}:${pad(d.getMinutes())}`; }
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const normPhone = v => String(v || '').replace(/[\s\-()]/g, '').replace(/^\+?65/, '').replace(/^0+/, '');
+const loadOwners = () => { try { return JSON.parse(localStorage.getItem(STORE_KEY) || '[]'); } catch { return []; } };
+const saveOwners = l => { try { localStorage.setItem(STORE_KEY, JSON.stringify(l)); return true; } catch { return false; } };
+
+/* ---------------- Terms data ---------------- */
+const TERMS = [
+  { en:['Health & vaccination declaration.',' The Owner declares that each registered {p} is in good health and has completed the vaccinations required by AVS and the Provider ({vac}), and has disclosed all known illnesses, allergies, medication, pregnancy and behavioural issues (e.g. biting, {beh}, extreme fear). If false or concealed information is provided, the Provider may refuse service and the Owner bears all resulting costs and liability.'],
+    zh:'健康与疫苗声明。主人声明所登记{n}健康状况良好，已按 AVS 及本店要求完成{vaczh}，并已如实告知所有已知疾病、过敏、用药、怀孕及行为问题（如{behzh}、极度恐惧）。如提供虚假或隐瞒信息，本店有权拒绝服务，主人须承担由此产生的全部费用与责任。' },
+
+  { en:['Risk acknowledgement.',' The Owner understands that grooming procedures, holding the {p} steady during grooming, drying{tr1}, and adaptation to an unfamiliar environment carry inherent risks, including scratches, bites, abrasions, stress, escape and cross-infection. The Provider will exercise reasonable care but cannot guarantee a zero-risk outcome.'],
+    zh:'风险认知。主人理解美容操作、美容过程中安抚并固定{n}身体、吹干及适应陌生环境{tr1zh}等过程存在固有风险，包括抓伤、咬伤、擦伤、应激、走失及交叉感染。本店将采取合理谨慎的照护措施，但无法保证零风险。' },
+
+  { en:['Limitation of liability.'," To the fullest extent permitted by law, the Provider is not liable for injury, illness, death or loss of property not caused by its negligence or wilful misconduct. The Provider's total liability for any single incident is limited to the fees paid by the Owner for that service. Nothing in this clause excludes any liability that cannot be excluded under Singapore law."],
+    zh:'责任限制。在法律允许的最大范围内，对于非因本店疏忽或故意不当行为所致的伤害、疾病、死亡或财物损失，本店不承担责任。本店就任何单一事件的总赔偿责任，以主人为该次服务实际支付的费用为上限。本条不排除依法不可排除的责任。' },
+
+  { en:['Emergency veterinary authorisation.'," If a {p} requires urgent medical attention and the Owner or the Owner's emergency contact cannot be reached within a reasonable time, the Provider is authorised to take the {p} to a partner or nearby veterinary clinic. The Owner agrees to bear all medical, transport and related costs, which the Provider may advance and later recover with receipts."],
+    zh:'紧急医疗授权。若{n}出现紧急状况且无法在合理时间内联系到主人或其紧急联系人，本店有权将{n}送往合作或就近的兽医诊所。主人同意承担全部医疗、交通及相关费用，本店可先行垫付，事后凭单据收取。' },
+
+  { en:['Grooming risks.',' Mat removal, clipping, bathing, drying, and holding the {p} steady on the grooming table ({hold}) may cause skin redness, follicle damage, minor nicks or stress reactions, particularly in senior, sensitive or anxious {pl}. The Owner consents to procedures carried out with reasonable professional judgement and confirms that any skin conditions and sensitive areas have been disclosed.'],
+    zh:'美容操作风险。去结、剪毛、洗护、吹干，以及在美容台上安抚并固定{n}（{holdzh}）的过程中，可能因年老、皮肤敏感或紧张而出现皮肤红肿、毛囊损伤、轻微破损或应激反应。主人同意在合理专业判断下进行必要操作，并确认已告知皮肤病史与敏感部位。' },
+
+  { onlyDog:true, en:['Transport.',' Transport is provided as a convenience. The Owner understands that {pl} travel unrestrained in a vehicle and that motion sickness, journey stress, escape when doors are opened, or traffic delays may occur. The Provider will use reasonable care in loading, securing and unloading the {p}.'],
+    zh:'接送服务。接送为便利性服务。主人理解{n}在车内不受束缚，可能出现晕车、旅途应激、开门时走脱或交通延误等情况。本店将在上下车及运输过程中采取合理的谨慎措施。' },
+
+  { onlyCat:true, en:['Cat-specific handling.',' The Owner understands that cats are highly sensitive to unfamiliar environments and handling. Shaving or dematting may be necessary where the coat is severely matted, and may result in an uneven finish, skin irritation or clipper burn. A cat may be returned in a carrier for its own safety, and sedation is never administered by the Provider — if sedation is required, the Owner must arrange it with a veterinarian beforehand.'],
+    zh:'猫咪特殊操作说明。主人理解猫咪对新环境与身体接触高度敏感。若毛发严重打结，可能需要剃毛或去结处理，成品可能不平整，并可能引起皮肤刺激或电剪烫伤。为安全起见，猫咪可能需留在提篮内完成部分操作；本店不提供任何镇静药物，如需镇静须由主人事先经兽医安排。' },
+
+  { en:['Photo & video consent (optional).',' The Provider may photograph or film your {p} for service records, internal training and social media. You may tick or leave this blank below; declining does not affect the service. The Provider will not disclose the Owner\'s contact details.'],
+    zh:'影像使用（可选）。本店可能为服务记录、内部培训及社交媒体拍摄{n}照片或视频。可在下方勾选或留空，不同意不影响服务。本店不会披露主人的联系方式。' },
+
+  { en:['Duty to update information.'," The Owner will promptly inform the Provider of any material change in the {p}'s health, behaviour or the Owner's contact details — in particular pregnancy, surgery, a diagnosed infectious disease, or the emergence of biting behaviour. The Owner is responsible for consequences arising from a failure to update."],
+    zh:'资料更新义务。当{n}的健康、行为或主人的联系方式发生重要变化时（尤其是怀孕、术后、确诊传染病、出现咬人倾向），主人应主动告知本店。因未及时更新导致的后果，由主人承担。' },
+
+  { en:['Personal data protection (PDPA).'," Personal data is collected, used and retained in accordance with the Personal Data Protection Act 2012 for the purposes of providing the Services, health and safety records, emergency contact and billing. Data is kept within the Provider only for as long as required for business or legal purposes, with reasonable security arrangements. The Owner may request access, correction or withdraw consent by contacting the Provider's Data Protection Officer."],
+    zh:'个人资料保护（PDPA）。本店依《2012 年个人资料保护法》收集、使用及保存个人资料，用途为：提供服务、健康与安全记录、紧急联络及账单。资料仅在本店内部按业务或法律所需期限保存，并采取合理保安措施。主人可联系本店资料保护专员要求查阅、更正或撤回同意。' },
+
+  { en:['Electronic signature.',' The Owner agrees to sign this document electronically and confirms that, under the Electronic Transactions Act 2010, this electronic signature has the same legal effect as a handwritten signature. The Provider retains the signing time, device information, signature image and document version as evidence.'],
+    zh:'电子签名效力。主人同意以电子方式签署本文件，并确认依《2010 年电子交易法》该电子签名与手写签名具有同等法律效力。本店将保存签署时间、设备信息、签名图像及文件版本，作为签署凭证。' },
+
+  { en:['Governing law.',' This form is governed by and construed in accordance with the laws of Singapore, and the courts of Singapore have exclusive jurisdiction. If any provision is held invalid, the remaining provisions remain in full force.'],
+    zh:'适用法律。本同意书受新加坡法律管辖并依其解释，争议由新加坡法院专属管辖。若任一条款被认定无效，不影响其余条款的效力。' }
+];
+
+/* 物种词表：所有称呼、疫苗、行为示例随猫/狗切换 */
+const SPECIES = {
+  dog: {
+    p:'dog', pl:'dogs', n:'狗狗',
+    vac:'including rabies, distemper and parvovirus', vaczh:'年度疫苗接种（含狂犬病、犬瘟热、细小病毒等）',
+    beh:'biting or resource guarding', behzh:'咬人或护食',
+    tr1:', transport by vehicle', tr1zh:'、车辆接送',
+    tserv:' and pet transport', tservzh:'与宠物接送',
+    hold:'e.g. holding the paws for nail clipping, supporting the body, or using a grooming loop',
+    holdzh:'如握着爪子剪甲、托住身体、使用美容绳',
+    hasTransport:true
+  },
+  cat: {
+    p:'cat', pl:'cats', n:'猫咪',
+    vac:'including feline calicivirus, herpesvirus and panleukopenia', vaczh:'年度核心疫苗（猫三联：猫杯状病毒、疱疹病毒、泛白细胞减少症，即猫瘟）',
+    beh:'hiding, scratching or biting when handled', behzh:'躲藏、受惊抓人或咬人',
+    tr1:'', tr1zh:'',
+    tserv:'', tservzh:'',
+    hold:'e.g. scruff support, towel wrapping, or a cat bag for restraint',
+    holdzh:'如托住颈背、毛巾包裹或使用猫咪保定袋',
+    hasTransport:false
+  }
+};
+
+/* ---------------- i18n ---------------- */
+const T = {
+  en: {
+    'brand.sub':'Waiver & Consent','records':'Customers','eyebrow':'Singapore · Pet Grooming{tserv}',
+    'sp.dogsub':'Dog grooming','sp.catsub':'Cat grooming','sp.hint':'Choose the type of pet for this form. Terms adapt accordingly. The same owner may have both cats and dogs, each with its own file.',
+    'h1':'Pet Service Waiver & Consent Form','h1.sub':'宠物服务免责声明与同意书',
+    'lede':"Sign once to create a long-term customer file. On future visits, we simply look you up by mobile number — no need to sign again. You can update your {p}'s details at any time.",
+    'chip.once':'Sign once · Valid ongoing','chip.phone':'Lookup by mobile','chip.pdpa':'PDPA compliant',
+    'lk.title':'Returning customer? Find your file','lk.sub':'Enter your mobile number — no need to sign again.','lk.ph':'Mobile number','lk.btn':'Find file',
+    's1.eyebrow':'Owner','s1.title':'Your details','f.ownerName':'Full name','f.ownerName.ph':'As per NRIC / FIN','f.mobile':'Mobile number',
+    's2.eyebrow':'Pets','s2.title':'Your {p}(s)','pets.tip':'You may register more than one {p}.','pets.add':'+ Add {p}',
+    's3.eyebrow':'Services','s3.title':'Services you consent to',
+    's4.eyebrow':'Terms','s4.title':'Terms & conditions',
+    'terms.intro':'<b>CuteSource</b> (the “Provider”) provides pet grooming{tserv} services in Singapore (the “Services”). This form is signed by the pet owner (the “Owner”), takes effect on the date of signing and remains valid for all Services provided to the Owner\'s registered {pl} — no re-signing is required at each visit.<span class="zh-note">CuteSource（下称“本店”）在新加坡提供宠物美容{tservzh}服务（下称“服务”）。本同意书由宠物主人（下称“主人”）签署，自签署之日起生效，长期适用于主人名下已登记{n}的全部服务，无需每次到店重复签署。</span>',
+    'terms.ver':'Version 3.0 · Last updated','scrollCue':'↕ Scroll to read the full terms',
+    's5.eyebrow':'Acknowledgement','s5.title':'Please confirm',
+    'ck1':'I have read and understood all the terms above and agree to be bound by them.','ck2':'I confirm that the health, behaviour and vaccination information provided is true and complete, and I will inform the Provider of any change.',
+    'ck3':'I am the owner of the registered {p}(s), or an authorised representative.','ck4':'I consent to my {p} being photographed or filmed for service records and promotional use.','ck4.small':'Optional · does not affect service',
+    's6.eyebrow':'Signature','s6.title':'Sign below','sig.hint':'Sign here with your finger or mouse','sig.name':'Signed by: ','sig.clear':'Clear','sig.err':'Please sign first.',
+    'sum.title':'Summary','sum.owner':'Owner','sum.pets':'{P}s','sum.phone':'Mobile','sum.progress':'Progress',
+    'notice':'<b>Note:</b> this file is stored in the browser on this device, and a backup file downloads automatically when you save. Please do not use incognito mode.',
+    'done.title':'Customer file created','done.updated':'Customer file updated','done.sub':'You have signed once and will not need to sign again on future visits.',
+    'done.ref':'Customer ID','done.nextTitle':'Next visit','done.nextBody':'Enter your mobile number on the main page and tap “Find file” — that\'s it.',
+    'done.pdf':'Download PDF','done.new':'Next customer','bar.status':'Complete the required fields and sign','bar.submit':'Submit & save',
+    'rec.title':'Customer files','rec.csv':'Export CSV','rec.search':'Search name / mobile / pet name',
+    'pet.n':'{P} {n2}','pet.remove':'Remove','pet.name':'{P} name','pet.breed':'Breed','pet.birth':'Date of birth','pet.sex':'Sex','pet.age':'Weight',
+    'pet.neutered':'Neutered','pet.vaccine':'Vaccination','pet.health':'Health & behaviour',
+    'pet.health.hint':' (allergies, conditions, medication, behaviour)','pet.vaccine.choose':'— Select —',
+    'pet.vaccine.done':'{VAC_DONE}','pet.vaccine.partial':'Partial (records provided)','pet.vaccine.none':'Not vaccinated / overdue',
+    'sex.m':'Male','sex.f':'Female','yn.y':'Yes','yn.n':'No','btn.new':'Submit & save','btn.update':'Update file',
+    'lk.view':'View PDF','lk.update':'Update details','lk.force':'Create new base','lk.fill':'Use this number',
+    'foot.count':n=>`${n} customer file(s) stored on this device`
+  },
+  zh: {
+    'brand.sub':'免责与同意书','records':'客户档案','eyebrow':'新加坡 · 宠物美容{tservzh}',
+    'sp.dogsub':'狗狗美容','sp.catsub':'猫咪美容','sp.hint':'请选择本次签署的宠物类型，条款会随之调整。同一主人可同时拥有猫和狗，各自建档。',
+    'h1':'宠物服务免责声明与同意书','h1.sub':'Pet Service Waiver & Consent Form',
+    'lede':'签署一次即建立长期有效的客户档案。之后每次到店只需报手机号调出档案，无需重复签署；{n}资料有变化时可随时更新。',
+    'chip.once':'签一次 · 长期有效','chip.phone':'报手机号即可调档','chip.pdpa':'符合新加坡 PDPA',
+    'lk.title':'老客户？先查一下档案','lk.sub':'输入手机号，已签署过的主人可直接调出，无须再签。','lk.ph':'手机号','lk.btn':'查找档案',
+    's1.eyebrow':'Owner','s1.title':'主人资料','f.ownerName':'姓名','f.ownerName.ph':'与身份证件一致','f.mobile':'手机号码',
+    's2.eyebrow':'Pets','s2.title':'{n}资料','pets.tip':'可登记多只{n}。','pets.add':'+ 添加{n}',
+    's3.eyebrow':'Services','s3.title':'同意接受的服务',
+    's4.eyebrow':'Terms','s4.title':'条款内容',
+    'terms.intro':'<b>CuteSource</b>（下称“本店”）在新加坡提供宠物美容{tservzh}服务（下称“服务”）。本同意书由宠物主人（下称“主人”）签署，自签署之日起生效，长期适用于主人名下已登记{n}的全部服务，无需每次到店重复签署。<span class="zh-note">CuteSource (the “Provider”) provides pet grooming{tserv} services in Singapore (the “Services”). This form is signed by the pet owner (the “Owner”), takes effect on the date of signing and remains valid for all Services provided to the Owner\'s registered {pl}.</span>',
+    'terms.ver':'版本 3.0 · 更新于','scrollCue':'↕ 可上下滚动阅读全文',
+    's5.eyebrow':'Acknowledgement','s5.title':'确认事项',
+    'ck1':'我已完整阅读并理解上述全部条款，并同意受其约束。','ck2':'我确认以上健康、行为及疫苗信息真实完整，并将在状况变化时主动告知本店。',
+    'ck3':'我是所登记{n}的主人，或已获授权的代理人。','ck4':'我同意本店为服务记录及宣传目的拍摄并发布我的{n}影像。','ck4.small':'可选 · 不影响服务提供',
+    's6.eyebrow':'Signature','s6.title':'本人签名','sig.hint':'请在此处用手指或鼠标签名','sig.name':'签署人：','sig.clear':'清除重签','sig.err':'请先完成签名。',
+    'sum.title':'本次建档摘要','sum.owner':'主人','sum.pets':'{n}','sum.phone':'手机号','sum.progress':'填写进度',
+    'notice':'<b>提示：</b>档案保存在本设备的浏览器中，签署后会自动下载一份备份文件。请勿使用无痕模式。',
+    'done.title':'档案已建立','done.updated':'档案已更新','done.sub':'主人已签署一次，今后到店无须重复签署。',
+    'done.ref':'客户编号','done.nextTitle':'下次到店','done.nextBody':'在主页面输入手机号，点“查找档案”即可调出。',
+    'done.pdf':'下载 PDF','done.new':'下一位主人','bar.status':'请填写必填项并完成签名','bar.submit':'提交并保存',
+    'rec.title':'客户档案','rec.csv':'导出表格','rec.search':'搜索姓名 / 手机号 / 宠物名',
+    'pet.n':'{n} {n2}','pet.remove':'删除','pet.name':'名字','pet.breed':'品种','pet.birth':'出生年月','pet.sex':'性别','pet.age':'体重',
+    'pet.neutered':'是否绝育','pet.vaccine':'疫苗接种','pet.health':'健康与行为',
+    'pet.health.hint':'（过敏、疾病、用药、行为问题）','pet.vaccine.choose':'— 请选择 —',
+    'pet.vaccine.done':'{VAC_DONE}','pet.vaccine.partial':'部分完成（已提供记录）','pet.vaccine.none':'未接种 / 已逾期',
+    'sex.m':'公','sex.f':'母','yn.y':'是','yn.n':'否','btn.new':'提交并保存','btn.update':'更新档案',
+    'lk.view':'查看档案 PDF','lk.update':'更新资料','lk.force':'仍要新建','lk.fill':'用这个号码新建',
+    'foot.count':n=>`本机共 ${n} 位主人已建档`
+  }
+};
+let LANG = localStorage.getItem('cutesource_lang') || 'en';
+let SPECIES_KEY = localStorage.getItem('cutesource_species') || 'dog';
+const sp = () => SPECIES[SPECIES_KEY];
+
+/* 把 {p} {n} 等占位符换成当前物种说法 */
+function fillSp(txt) {
+  if (typeof txt !== 'string') return txt;
+  const S = sp();
+  return txt
+    .replace(/\{p\}/g, S.p)
+    .replace(/\{P\}/g, S.p.charAt(0).toUpperCase() + S.p.slice(1))
+    .replace(/\{pl\}/g, S.pl)
+    .replace(/\{n\}/g, S.n)
+    .replace(/\{n2\}/g, '{n2}')
+    .replace(/\{tserv\}/g, S.tserv || '')
+    .replace(/\{tservzh\}/g, S.tservzh || '')
+    .replace(/\{vac\}/g, S.vac).replace(/\{vaczh\}/g, S.vaczh)
+    .replace(/\{beh\}/g, S.beh).replace(/\{behzh\}/g, S.behzh)
+    .replace(/\{tr1\}/g, S.tr1 || '').replace(/\{tr1zh\}/g, S.tr1zh || '')
+    .replace(/\{hold\}/g, S.hold).replace(/\{holdzh\}/g, S.holdzh)
+    .replace(/\{VAC_DONE\}/g, LANG === 'en'
+      ? (SPECIES_KEY === 'dog' ? 'Up to date (rabies / distemper / parvo)' : 'Up to date (FVRCP)')
+      : (SPECIES_KEY === 'dog' ? '已完成年度疫苗（狂犬 / 犬瘟 / 细小）' : '已完成年度疫苗（猫三联）'));
+}
+const trRaw = k => (T[LANG][k] !== undefined ? T[LANG][k] : T.en[k]);
+const tr = k => fillSp(trRaw(k));
+
+const today = new Date();
+const todayISO = `${today.getFullYear()}-${pad(today.getMonth()+1)}-${pad(today.getDate())}`;
+
+/* render terms list */
+function renderTerms() {
+  const list = $('#termsList');
+  if (!list) return;
+  const S = sp();
+  const active = TERMS.filter(t =>
+    (!t.onlyDog || S.hasTransport) && (!t.onlyCat || !S.hasTransport));
+
+  list.innerHTML = active.map(t => {
+    const enTitle = fillSp(t.en[0]);
+    const enBody = fillSp(t.en[1]);
+    const zh = fillSp(t.zh);
+    return LANG === 'en'
+      ? `<li><b>${esc(enTitle)}</b>${esc(enBody)}<span class="zh-note">${esc(zh)}</span></li>`
+      : `<li><b>${esc(zh.slice(0, zh.indexOf('。') + 1))}</b>${esc(zh.slice(zh.indexOf('。') + 1))}<span class="zh-note">${esc(enTitle + enBody)}</span></li>`;
+  }).join('');
+  $$('.terms-box [data-i18n="terms.ver"]').forEach(el => {
+    // 版本行：主语言 + 日期 + 中英对照
+    el.innerHTML = LANG === 'en'
+      ? `Version 3.0 · Last updated ${fmtDate(todayISO)}`
+      : `版本 3.0 · 更新于 ${fmtDate(todayISO)} · Version 3.0`;
+  });
+}
+
+/* ---------- 切换物种 ---------- */
+function setSpecies(key, opts = {}) {
+  SPECIES_KEY = (key === 'cat') ? 'cat' : 'dog';
+  localStorage.setItem('cutesource_species', SPECIES_KEY);
+
+  // 按钮状态
+  $$('.sp-opt').forEach(b => b.classList.toggle('on', b.dataset.species === SPECIES_KEY));
+  $$('[data-sp-t]').forEach(el => {
+    el.textContent = LANG === 'en'
+      ? (el.dataset.spT === 'cat' ? 'Cat' : 'Dog')
+      : (el.dataset.spT === 'cat' ? '猫咪' : '狗狗');
+  });
+
+  // 标题 / 术语文字
+  $$('[data-i18n]').forEach(el => { el.innerHTML = fillSp(trRaw(el.dataset.i18n)); });
+  $$('[data-i18n-ph]').forEach(el => { el.placeholder = fillSp(trRaw(el.dataset.i18nPh)); });
+
+  // 页面主题
+  document.body.dataset.species = SPECIES_KEY;
+  renderTerms();
+  renumberPets();
+  updateSummary();
+
+  // 新建状态下清空宠物卡片，避免猫档里留着狗资料
+  if (!currentCustomer && !opts.keepPets) {
+    $('#petList').innerHTML = ''; petSeq = 0;
+    addPet();
+  }
+  if (currentCustomer) showCustomerBanner(currentCustomer);
+}
+
+$$('.sp-opt').forEach(btn => btn.addEventListener('click', () => {
+  if (btn.dataset.species === SPECIES_KEY) return;
+  const dirty = $$('#petList .pet-card').some(c => {
+    const v = c.querySelector('[data-k="name"]').value.trim();
+    return !!v;
+  });
+  if (dirty && !currentCustomer) {
+    const go = confirm(LANG === 'en'
+      ? 'Switching pet type will clear the pet details you entered. Continue?'
+      : '切换宠物类型会清空已填写的宠物资料，确定继续吗？');
+    if (!go) return;
+  }
+  setSpecies(btn.dataset.species, { keepPets: !dirty });
+  $('#speciesPick').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}));
+
+/* apply language everywhere */
+function applyLang(l) {
+  LANG = l;
+  localStorage.setItem('cutesource_lang', l);
+  document.documentElement.lang = l === 'en' ? 'en' : 'zh-Hans';
+  document.body.className = l;
+
+  $$('.lang-toggle button').forEach(b => b.classList.toggle('on', b.dataset.lang === l));
+  $$('[data-i18n]').forEach(el => { el.innerHTML = fillSp(trRaw(el.dataset.i18n)); });
+  $$('[data-i18n-ph]').forEach(el => { el.placeholder = fillSp(trRaw(el.dataset.i18nPh)); });
+  $$('.sp-opt').forEach(b => b.classList.toggle('on', b.dataset.species === SPECIES_KEY));
+  $$('[data-sp-t]').forEach(el => {
+    el.textContent = LANG === 'en'
+      ? (el.dataset.spT === 'cat' ? 'Cat' : 'Dog')
+      : (el.dataset.spT === 'cat' ? '猫咪' : '狗狗');
+  });
+
+  renderTerms();
+  renumberPets();
+  updateSummary();
+  renderRecords();
+  if (currentCustomer) showCustomerBanner(currentCustomer);
+  const btn = $('#submitBtn');
+  if (btn) btn.textContent = currentCustomer ? tr('btn.update') : tr('btn.new');
+}
+
+/* ---------------- Pet cards ---------------- */
+let petSeq = 0;
+function makePetCard() {
+  petSeq++;
+  const id = 'p' + petSeq;
+  const d = document.createElement('div');
+  d.className = 'pet-card'; d.dataset.pid = id;
+  d.innerHTML = `
+    <div class="pc-head"><b data-pn></b><button type="button" class="rm" data-rm></button></div>
+    <div class="grid">
+      <div class="field"><label data-l="pet.name" class="req"></label><input type="text" data-k="name" placeholder="Mochi"></div>
+      <div class="field"><label data-l="pet.breed" class="req"></label><input type="text" data-k="breed"></div>
+      <div class="field"><label data-l="pet.birth" class="req"></label><input type="month" data-k="birth" min="1995-01" max="${todayISO.slice(0,7)}"></div>
+      <div class="field"><label data-l="pet.vaccine" class="req"></label><select data-k="vaccine"></select></div>
+      <div class="field"><label data-l="pet.sex"></label>
+        <div class="seg"><input type="radio" id="${id}_m" name="sex_${id}" value="M"><label for="${id}_m" data-sx="m"></label>
+        <input type="radio" id="${id}_f" name="sex_${id}" value="F"><label for="${id}_f" data-sx="f"></label></div></div>
+      <div class="field"><label data-l="pet.age"></label><input type="text" data-k="age"></div>
+      <div class="field"><label data-l="pet.neutered"></label>
+        <div class="seg"><input type="radio" id="${id}_y" name="neu_${id}" value="Y"><label for="${id}_y" data-yn="y"></label>
+        <input type="radio" id="${id}_n" name="neu_${id}" value="N"><label for="${id}_n" data-yn="n"></label></div></div>
+      <div class="field full"><label data-l="pet.health"></label><textarea data-k="health"></textarea></div>
+    </div>`;
+  d.querySelector('[data-rm]').addEventListener('click', () => {
+    if ($$('#petList .pet-card').length <= 1) return;
+    d.remove(); renumberPets(); updateSummary();
+  });
+  return d;
+}
+function localizePet(i, card) {
+  card.querySelector('[data-pn]').textContent = tr('pet.n').replace('{n2}', i + 1);
+  card.querySelector('[data-rm]').textContent = tr('pet.remove');
+  card.querySelectorAll('[data-l]').forEach(el => {
+    const k = el.dataset.l;
+    el.innerHTML = tr(k) + (el.classList.contains('req') ? '<em>*</em>' : '');
+    if (k === 'pet.health') el.innerHTML = tr('pet.health') + `<span class="hint">${tr('pet.health.hint')}</span>`;
+  });
+  card.querySelectorAll('[data-sx]').forEach(el => el.textContent = tr('sex.' + el.dataset.sx));
+  card.querySelectorAll('[data-yn]').forEach(el => el.textContent = tr('yn.' + el.dataset.yn));
+  const sel = card.querySelector('[data-k="vaccine"]');
+  const cur = sel.value;
+  sel.innerHTML = `<option value="">${tr('pet.vaccine.choose')}</option>
+    <option value="done">${tr('pet.vaccine.done')}</option>
+    <option value="partial">${tr('pet.vaccine.partial')}</option>
+    <option value="none">${tr('pet.vaccine.none')}</option>`;
+  sel.value = cur;
+  const bp = card.querySelector('[data-k="breed"]');
+  const ap = card.querySelector('[data-k="age"]');
+  if (bp && !bp.value) bp.placeholder = SPECIES_KEY === 'cat' ? 'Ragdoll / Domestic shorthair' : 'Corgi';
+  if (ap && !ap.value) ap.placeholder = SPECIES_KEY === 'cat' ? '4.5 kg' : '12 kg';
+}
+function renumberPets() { $$('#petList .pet-card').forEach((c, i) => localizePet(i, c)); }
+function addPet(data) {
+  const card = makePetCard();
+  $('#petList').appendChild(card);
+  localizePet($$('#petList .pet-card').length - 1, card);
+  if (data) {
+    card.querySelectorAll('[data-k]').forEach(el => { if (data[el.dataset.k] != null) el.value = data[el.dataset.k]; });
+    if (data.sex) { const r = card.querySelector(`input[value="${data.sex}"]`); if (r) r.checked = true; }
+    if (data.neutered) { const r = card.querySelector(`input[value="${data.neutered}"]`); if (r) r.checked = true; }
+  }
+  return card;
+}
+$('#addPet').addEventListener('click', () => { addPet(); updateSummary(); });
+function collectPets() {
+  return $$('#petList .pet-card').map(c => {
+    const o = { id: c.dataset.pid };
+    c.querySelectorAll('[data-k]').forEach(el => o[el.dataset.k] = el.value.trim());
+    const sx = c.querySelector('input[name^="sex_"]:checked');
+    const nu = c.querySelector('input[name^="neu_"]:checked');
+    o.sex = sx ? sx.value : ''; o.neutered = nu ? nu.value : '';
+    return o;
+  });
+}
+
+/* ---------------- Lookup ---------------- */
+let currentCustomer = null;
+const findByPhone = p => { const n = normPhone(p); return n.length < 8 ? null : (loadOwners().find(o => normPhone(o.mobile) === n) || null); };
+
+function showCustomerBanner(c) {
+  const b = $('#banner');
+  b.classList.add('show'); b.classList.remove('warn');
+  b.querySelector('.bi').outerHTML = '<svg class="bi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12.5l2 2 4-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const nm = c.pets.map(p => p.name).join(', ');
+  const noun = LANG === 'en'
+    ? ((c.species === 'cat') ? (c.pets.length > 1 ? 'Cats' : 'Cat') : (c.pets.length > 1 ? 'Dogs' : 'Dog'))
+    : ((c.species === 'cat') ? '猫咪' : '狗狗');
+  $('#bannerTxt').innerHTML = LANG === 'en'
+    ? `<b>${esc(c.ownerName)}</b> signed on ${fmtDateTime(c.createdAt)}. File is valid — <u>no need to sign again</u>.
+       <div style="color:var(--muted);font-size:13px;margin-top:3px">ID ${esc(c.id)} · ${esc(noun)}: ${esc(nm)}</div>`
+    : `<b>${esc(c.ownerName)}</b> 已于 ${fmtDateTime(c.createdAt)} 签署，档案有效，<u>无需再签</u>。
+       <div style="color:var(--muted);font-size:13px;margin-top:3px">编号 ${esc(c.id)} · ${esc(noun)}：${esc(c.pets.map(p => p.name).join('、'))}</div>`;
+  b.querySelector('.btns')?.remove();
+  const btns = document.createElement('div');
+  btns.className = 'btns';
+  btns.innerHTML = `<button class="btn-sm soft" type="button" id="bnView">${tr('lk.view')}</button>
+    <button class="btn-sm soft" type="button" id="bnUpdate">${tr('lk.update')}</button>
+    <button class="btn-sm" type="button" id="bnNew">${tr('lk.force')}</button>`;
+  b.appendChild(btns);
+  $('#bnView').onclick = () => printRecord(c);
+  $('#bnUpdate').onclick = () => loadIntoForm(c);
+  $('#bnNew').onclick = () => { currentCustomer = null; $('#banner').classList.remove('show'); resetForm(); };
+}
+function loadIntoForm(c) {
+  currentCustomer = c;
+  // 先把页面切到该档案的宠物类型，条款与措辞才对得上
+  if (c.species && c.species !== SPECIES_KEY) setSpecies(c.species, { keepPets: true });
+  $('#ownerName').value = c.ownerName || '';
+  $('#mobile').value = c.mobile || '';
+  $('#petList').innerHTML = ''; petSeq = 0;
+  (c.pets && c.pets.length ? c.pets : [{}]).forEach(p => addPet(p));
+  drawSignatureFrom(c.signature);
+  ['ck1','ck2','ck3','ck4'].forEach(k => { $('#' + k).checked = !!c[k]; });
+  updateSummary();
+  $('#submitBtn').textContent = tr('btn.update');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+$('#btnLookup').addEventListener('click', doLookup);
+$('#lookupPhone').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); doLookup(); } });
+
+function doLookup() {
+  const p = $('#lookupPhone').value;
+  const c = findByPhone(p);
+  const b = $('#banner');
+  if (c) {
+    currentCustomer = c;
+    if (c.species && c.species !== SPECIES_KEY) setSpecies(c.species, { keepPets: true });
+    loadIntoForm(c);
+    showCustomerBanner(c);
+    return;
+  }
+  currentCustomer = null;
+  b.classList.add('show', 'warn');
+  $('#bannerTxt').innerHTML = LANG === 'en'
+    ? '<b>No file found for this number</b><br>Please create a new file — this takes about two minutes.'
+    : '<b>没有找到这个号码的档案</b><br>请为这位主人建立新档案，约两分钟即可完成。';
+  b.querySelector('.btns')?.remove();
+  const btns = document.createElement('div');
+  btns.className = 'btns';
+  btns.innerHTML = `<button class="btn-sm" type="button" id="bnFill">${tr('lk.fill')}</button>`;
+  b.appendChild(btns);
+  $('#bnFill').onclick = () => { $('#mobile').value = p; updateSummary(); window.scrollTo({ top: 180, behavior: 'smooth' }); };
+}
+
+/* ---------------- Signature ---------------- */
+const canvas = $('#sigCanvas');
+const ctx = canvas.getContext('2d');
+let drawing = false, hasInk = false, lastPt = null;
+function resizeCanvas(preserve = true) {
+  const rect = $('#sigWrap').getBoundingClientRect();
+  const dpr = Math.min(window.devicePixelRatio || 1, 3);
+  const prev = (preserve && hasInk) ? canvas.toDataURL('image/png') : null;
+  canvas.width = Math.round(rect.width * dpr);
+  canvas.height = Math.round(rect.height * dpr);
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.lineWidth = 2.2; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#16233a';
+  if (prev) {
+    const img = new Image();
+    img.onload = () => { ctx.save(); ctx.setTransform(1,0,0,1,0,0); ctx.drawImage(img, 0, 0, canvas.width, canvas.height); ctx.restore(); };
+    img.src = prev;
+  }
+}
+const getPos = e => { const r = canvas.getBoundingClientRect(); const p = e.touches ? e.touches[0] : e; return { x: p.clientX - r.left, y: p.clientY - r.top }; };
+function start(e) { e.preventDefault(); drawing = true; lastPt = getPos(e); ctx.beginPath(); ctx.moveTo(lastPt.x, lastPt.y); ctx.lineTo(lastPt.x + .1, lastPt.y + .1); ctx.stroke(); markSigned(); }
+function move(e) {
+  if (!drawing) return; e.preventDefault();
+  const p = getPos(e), m = { x: (lastPt.x + p.x) / 2, y: (lastPt.y + p.y) / 2 };
+  ctx.quadraticCurveTo(lastPt.x, lastPt.y, m.x, m.y); ctx.stroke(); lastPt = p;
+}
+function end() { if (!drawing) return; drawing = false; ctx.closePath(); updateSigData(); }
+function markSigned() { if (!hasInk) { hasInk = true; $('#sigWrap').classList.add('signed'); $('#sigPlaceholder').style.display = 'none'; $('#sigErr').style.display = 'none'; } }
+function clearSig() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); hasInk = false; lastPt = null;
+  $('#sigWrap').classList.remove('signed'); $('#sigPlaceholder').style.display = ''; $('#sigData').value = '';
+  updateSummary();
+}
+function updateSigData() { $('#sigData').value = hasInk ? canvas.toDataURL('image/png') : ''; updateSummary(); }
+function drawSignatureFrom(url) {
+  clearSig(); if (!url) return;
+  const img = new Image();
+  img.onload = () => {
+    ctx.save(); ctx.setTransform(1,0,0,1,0,0); ctx.drawImage(img, 0, 0, canvas.width, canvas.height); ctx.restore();
+    hasInk = true; $('#sigWrap').classList.add('signed'); $('#sigPlaceholder').style.display = 'none';
+    $('#sigData').value = url; updateSummary();
+  };
+  img.src = url;
+}
+canvas.addEventListener('pointerdown', e => { canvas.setPointerCapture?.(e.pointerId); start(e); });
+canvas.addEventListener('pointermove', move);
+canvas.addEventListener('pointerup', end);
+canvas.addEventListener('pointercancel', end);
+canvas.addEventListener('pointerleave', () => { if (drawing) end(); });
+canvas.addEventListener('touchstart', e => e.preventDefault(), { passive: false });
+$('#clearSig').addEventListener('click', clearSig);
+
+/* ---------------- Summary ---------------- */
+function collect() {
+  const get = id => ($('#' + id)?.value || '').trim();
+  return {
+    ownerName: get('ownerName'), mobile: get('mobile'),
+    pets: collectPets(),
+    ck1: $('#ck1').checked, ck2: $('#ck2').checked, ck3: $('#ck3').checked, ck4: $('#ck4').checked,
+    signature: $('#sigData').value
+  };
+}
+function progress() {
+  const d = collect();
+  const okPets = d.pets.filter(p => p.name && p.breed && p.birth && p.vaccine);
+  const total = 2 + 3 + 1 + Math.max(1, d.pets.length);
+  const done = [d.ownerName, d.mobile].filter(Boolean).length
+    + (d.ck1?1:0) + (d.ck2?1:0) + (d.ck3?1:0) + (hasInk?1:0) + okPets.length;
+  return Math.min(100, Math.round(done / total * 100));
+}
+function updateSummary() {
+  const d = collect();
+  const set = (id, v) => { const el = $('#' + id); if (!el) return; el.textContent = v || '—'; el.classList.toggle('empty', !v); };
+  set('sumOwner', d.ownerName);
+  set('sumPet', d.pets.map(p => p.name).filter(Boolean).join(', '));
+  set('sumPhone', d.mobile);
+  const sp = $('#sigNamePreview'); if (sp) sp.textContent = d.ownerName || '—';
+  const p = progress();
+  $('#progBar').style.width = p + '%';
+  $('#progTxt').textContent = p + '%';
+  $('#barPct').textContent = p === 100 ? ' ✓' : '';
+}
+$('#waiverForm').addEventListener('input', e => { e.target.classList?.remove('err'); updateSummary(); });
+$('#waiverForm').addEventListener('change', updateSummary);
+
+/* ---------------- Validate ---------------- */
+function validate() {
+  let ok = true, first = null;
+  $$('.err').forEach(el => el.classList.remove('err'));
+  ['ownerName','mobile'].forEach(id => {
+    const el = $('#' + id);
+    if (!el.value.trim()) { el.classList.add('err'); ok = false; first = first || el; }
+  });
+  const mobile = $('#mobile');
+  if (mobile.value.trim() && !/^[689]\d{7}$/.test(normPhone(mobile.value))) {
+    mobile.classList.add('err'); ok = false; first = first || mobile;
+    mobile.setCustomValidity('SG mobile: 8 digits starting with 6/8/9');
+  } else mobile.setCustomValidity('');
+
+  $$('#petList .pet-card').forEach(c => {
+    ['name','breed','birth','vaccine'].forEach(k => {
+      const el = c.querySelector(`[data-k="${k}"]`);
+      if (!el.value.trim()) { el.classList.add('err'); ok = false; first = first || el; }
+    });
+  });
+  ['ck1','ck2','ck3'].forEach(id => {
+    const el = $('#' + id), box = el.closest('.check');
+    box.style.background = el.checked ? '' : '#fff5f4';
+    box.style.borderRadius = '8px';
+    if (!el.checked) { ok = false; first = first || el; }
+  });
+  if (!hasInk) {
+    $('#sigErr').style.display = 'block'; ok = false; first = first || $('#sigWrap');
+    $('#sigWrap').animate([{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'translateX(0)'}], {duration:260});
+  }
+  if (first) { first.scrollIntoView({ behavior: 'smooth', block: 'center' }); first.focus?.({ preventScroll: true }); }
+  return ok;
+}
+
+/* ---------------- Submit ---------------- */
+let lastSaved = null;
+$('#waiverForm').addEventListener('submit', e => {
+  e.preventDefault();
+  if (!validate()) return;
+  const btn = $('#submitBtn');
+  btn.disabled = true;
+  btn.textContent = LANG === 'en' ? 'Saving…' : '保存中…';
+
+  updateSigData();
+  const d = collect();
+  const owners = loadOwners();
+  const key = normPhone(d.mobile);
+  let rec, isUpdate = false;
+
+  const existing = (currentCustomer && normPhone(currentCustomer.mobile) === key)
+    ? currentCustomer : owners.find(o => normPhone(o.mobile) === key);
+
+  if (existing) {
+    if (!currentCustomer) {
+      const go = confirm(LANG === 'en'
+        ? `A file already exists for this number (${existing.ownerName}). Update it instead?`
+        : `这个手机号已有档案（${existing.ownerName}）。要更新该档案吗？`);
+      if (!go) { btn.disabled = false; btn.textContent = tr('btn.new'); return; }
+    }
+    rec = { ...existing, ...d, species: SPECIES_KEY, signature: hasInk ? d.signature : existing.signature, updatedAt: new Date().toISOString(), version: VERSION };
+    const i = owners.findIndex(o => o.id === rec.id);
+    if (i >= 0) owners[i] = rec; else owners.unshift(rec);
+    isUpdate = true;
+  } else {
+    const created = new Date();
+    rec = { id: 'CUS' + nowStamp(created), createdAt: created.toISOString(), ua: navigator.userAgent, version: VERSION, species: SPECIES_KEY, ...d };
+    owners.unshift(rec);
+  }
+
+  if (!saveOwners(owners)) alert(LANG === 'en'
+    ? 'Browser storage is full or unavailable. A backup file will be downloaded — please keep it.'
+    : '浏览器存储不可用或已满，将改为下载备份文件，请务必保存。');
+
+  downloadBackup(rec);
+  lastSaved = rec;
+
+  $('#formView').classList.add('hide');
+  $('#actionBar').style.display = 'none';
+  $('#doneView').classList.add('show');
+  $('#doneTitle').innerHTML = isUpdate ? tr('done.updated') : tr('done.title');
+  $('#doneRef').textContent = rec.id;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  renderRecords();
+  btn.disabled = false; btn.textContent = tr('btn.new');
+});
+
+function downloadBackup(rec) {
+  const blob = new Blob([JSON.stringify(rec, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `CuteSource_${rec.id}_${(rec.ownerName || 'owner').replace(/[^\w\u4e00-\u9fa5]/g, '')}.json`;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+}
+
+function resetForm() {
+  $('#waiverForm').reset();
+  $('#petList').innerHTML = ''; petSeq = 0;
+  addPet();
+  clearSig();
+  $$('.err').forEach(el => el.classList.remove('err'));
+  $$('.check').forEach(c => c.style.background = '');
+  $('#lookupPhone').value = '';
+  $('#submitBtn').textContent = tr('btn.new');
+  updateSummary();
+}
+$('#newForm').addEventListener('click', () => {
+  currentCustomer = null;
+  resetForm();
+  $('#banner').classList.remove('show');
+  $('#doneView').classList.remove('show');
+  $('#formView').classList.remove('hide');
+  $('#actionBar').style.display = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ---------------- Drawer ---------------- */
+function openDrawer() { $('#drawer').classList.add('show'); $('#mask').classList.add('show'); document.body.style.overflow = 'hidden'; renderRecords(); }
+function closeDrawer() { $('#drawer').classList.remove('show'); $('#mask').classList.remove('show'); document.body.style.overflow = ''; }
+$('#openRecords').addEventListener('click', openDrawer);
+$('#closeDrawer').addEventListener('click', closeDrawer);
+$('#mask').addEventListener('click', closeDrawer);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+$('#recSearch').addEventListener('input', renderRecords);
+
+function renderRecords() {
+  const all = loadOwners();
+  const q = ($('#recSearch').value || '').trim().toLowerCase();
+  const list = q ? all.filter(o => (o.ownerName || '').toLowerCase().includes(q) || (o.mobile || '').includes(q)
+    || (o.pets || []).some(p => (p.name || '').toLowerCase().includes(q))) : all;
+  const box = $('#recList');
+  $('#drawerFoot').textContent = tr('foot.count')(all.length);
+  if (!list.length) {
+    box.innerHTML = `<div class="empty-state">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M9.5 12h5M9.5 16h5" stroke-linecap="round"/></svg>
+      <div>${q ? (LANG === 'en' ? 'No matching records.' : '没有匹配的档案。') : (LANG === 'en' ? 'No customer files yet.' : '暂无客户档案。')}</div></div>`;
+    return;
+  }
+  const ICON_PAW = '<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><ellipse cx="6" cy="9" rx="2" ry="2.6"/><ellipse cx="10.4" cy="6.4" rx="2" ry="2.8"/><ellipse cx="15.2" cy="6.7" rx="2" ry="2.8"/><ellipse cx="19" cy="9.6" rx="1.9" ry="2.5"/><path d="M12.5 11.4c-2.9 0-5.8 2.3-5.8 5.1 0 1.9 1.4 3 3.1 3 1.1 0 1.9-.4 2.7-.4s1.6.4 2.7.4c1.7 0 3.1-1.1 3.1-3 0-2.8-2.9-5.1-5.8-5.1z"/></svg>';
+  const ICON_CAT = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.2 9.5 4 3.6l4.3 3.1a9 9 0 0 1 7.4 0L20 3.6l-.2 5.9"/><path d="M12 6.8c-3.9 0-7 2.8-7 6.4 0 4 3.1 6.6 7 6.6s7-2.6 7-6.6c0-3.6-3.1-6.4-7-6.4Z"/><path d="M9.4 11.2c.5-.6 1.2-.6 1.7 0M12.9 11.2c.5-.6 1.2-.6 1.7 0"/><path d="M12 13.6v.7M12 14.3c-.5.5-1.1.5-1.6.1M12 14.3c.5.5 1.1.5 1.6.1"/></svg>';
+  box.innerHTML = list.map(o => {
+    const isCat = o.species === 'cat';
+    return `
+    <div class="rec" data-id="${esc(o.id)}">
+      <div class="rec-av">${isCat ? ICON_CAT : ICON_PAW}</div>
+      <div class="rec-main">
+        <b>${esc(o.ownerName)}</b>
+        <small>${esc((o.pets || []).map(p => p.name).join(', '))} · ${esc(o.mobile)}</small>
+        <div class="rec-meta">${esc(o.id)} · ${fmtDateTime(o.createdAt)}</div>
+      </div>
+      <span class="rec-tag ${isCat ? 'cat' : ''}">${isCat ? (LANG === 'en' ? 'CAT' : '猫') : (LANG === 'en' ? 'DOG' : '狗')}</span>
+    </div>`;
+  }).join('');
+  box.querySelectorAll('.rec').forEach(el => el.addEventListener('click', () => {
+    const o = loadOwners().find(x => x.id === el.dataset.id);
+    if (o) printRecord(o);
+  }));
+}
+
+/* ---------------- CSV ---------------- */
+$('#expCsv').addEventListener('click', () => {
+  const list = loadOwners();
+  if (!list.length) { alert(LANG === 'en' ? 'No records to export.' : '暂无档案可导出。'); return; }
+  const cols = [['id','Customer ID'],['createdAt','Signed At'],['updatedAt','Updated At'],['ownerName','Owner Name'],
+    ['mobile','Mobile'],['species','Pet Type'],['pets','Pets'],['ck1','Terms Agreed'],['ck2','Info Accurate'],
+    ['ck3','Owner/Authorised'],['ck4','Photo Consent'],['version','Version']];
+  const VAC = { done: 'Up to date', partial: 'Partial', none: 'Not vaccinated' };
+  const head = cols.map(c => c[1]).join(',');
+  const rows = list.map(o => cols.map(([k]) => {
+    let v = o[k];
+    if (k === 'createdAt' || k === 'updatedAt') v = v ? new Date(v).toLocaleString('en-SG') : '';
+    if (k === 'species') v = o.species === 'cat' ? 'Cat' : 'Dog';
+    if (k === 'pets') v = (o.pets || []).map(p => `${p.name} (${p.breed}${p.birth ? ', born ' + fmtMonth(p.birth) : ''}${p.vaccine ? ', ' + (VAC[p.vaccine] || p.vaccine) : ''}${p.health ? ', ' + p.health : ''})`).join(' | ');
+    if (typeof v === 'boolean') v = v ? 'Yes' : 'No';
+    return '"' + String(v ?? '').replace(/"/g, '""') + '"';
+  }).join(','));
+  const blob = new Blob(['\ufeff' + [head, ...rows].join('\r\n')], { type: 'text/csv;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `CuteSource_Customers_${nowStamp()}.csv`;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+});
+
+/* ---------------- PDF ---------------- */
+const VAC_LABEL = { done: 'Up to date', partial: 'Partial', none: 'Not vaccinated' };
+function printRecord(o) {
+  if (!o) return;
+  const isCat = o.species === 'cat';
+  const S = isCat ? SPECIES.cat : SPECIES.dog;
+  const spFill = txt => {
+    if (typeof txt !== 'string') return txt;
+    return txt.replace(/\{p\}/g, S.p)
+      .replace(/\{P\}/g, S.p.charAt(0).toUpperCase() + S.p.slice(1))
+      .replace(/\{pl\}/g, S.pl)
+      .replace(/\{n\}/g, S.n)
+      .replace(/\{vac\}/g, S.vac).replace(/\{vaczh\}/g, S.vaczh)
+      .replace(/\{beh\}/g, S.beh).replace(/\{behzh\}/g, S.behzh)
+      .replace(/\{tr1\}/g, S.tr1 || '').replace(/\{tr1zh\}/g, S.tr1zh || '')
+      .replace(/\{tserv\}/g, S.tserv || '').replace(/\{tservzh\}/g, S.tservzh || '')
+      .replace(/\{hold\}/g, S.hold).replace(/\{holdzh\}/g, S.holdzh);
+  };
+  const pets = o.pets || [];
+  const rows = pets.map(p => `
+    <tr><td><b>${esc(p.name)}</b></td><td>${esc(p.breed || '—')}</td><td>${esc(p.birth ? fmtMonth(p.birth) : '—')}</td>
+    <td>${esc(p.sex === 'M' ? 'Male' : p.sex === 'F' ? 'Female' : '—')}</td><td>${esc(p.age || '—')}</td>
+    <td>${esc(p.neutered === 'Y' ? 'Yes' : p.neutered === 'N' ? 'No' : '—')}</td>
+    <td>${esc(VAC_LABEL[p.vaccine] || p.vaccine || '—')}</td></tr>
+    <tr><td colspan="7" style="font-size:8.8pt;color:#444;padding-top:2px"><b>Health &amp; behaviour:</b> ${esc(p.health || '—')}</td></tr>`).join('');
+  // 条款按该档案的物种过滤、并按该物种措辞还原
+  const activeTerms = TERMS.filter(t => (!t.onlyDog || S.hasTransport) && (!t.onlyCat || !S.hasTransport));
+  const termsHtml = activeTerms.map((t, i) => `<div class="ti"><b>${i+1}. ${esc(spFill(t.en[0]))}</b>${esc(spFill(t.en[1]))}<span class="cn">${esc(spFill(t.zh))}</span></div>`).join('');
+  const petHead = isCat ? 'Cats / 猫咪' : 'Dogs / 狗狗';
+  const petNoun = isCat ? 'cat' : 'dog';
+  const petNounZh = isCat ? '猫咪' : '狗狗';
+
+  const w = window.open('', '_blank');
+  const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>${esc(o.id)}</title>
+  <style>
+    @page{size:A4;margin:15mm 14mm}
+    *{box-sizing:border-box}
+    body{font-family:"Inter","Helvetica Neue",Arial,"Noto Sans SC",sans-serif;color:#111;font-size:10.4pt;line-height:1.62;margin:0}
+    h1{font-size:15.5pt;margin:0;letter-spacing:-.3px}
+    h1 .cn{font-size:10pt;font-weight:400;color:#666;margin-top:2px;display:block}
+    h2{font-size:9.5pt;letter-spacing:1.3px;text-transform:uppercase;color:#0f5c4a;border-bottom:1.2px solid #0f5c4a;padding-bottom:3px;margin:15px 0 7px}
+    .hd{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid #111;padding-bottom:9px}
+    .ref{text-align:right;font-size:8.8pt;color:#333}
+    .ref b{display:block;font-size:11pt;font-family:monospace;letter-spacing:1px;color:#111}
+    table{width:100%;border-collapse:collapse;font-size:9.2pt}
+    td{padding:4px 6px;border-bottom:1px solid #ddd;vertical-align:top}
+    td.k{width:22%;color:#555;background:#faf9f5}
+    .pets th{background:#0f5c4a;color:#fff;font-size:8.4pt;text-align:left;padding:4px 6px;font-weight:600}
+    .term{font-size:8.3pt;color:#333;border:1px solid #ddd;padding:9px;background:#fcfcfa}
+    .ti{margin-bottom:5px}
+    .cn{display:block;color:#5f6b66;font-size:7.9pt;margin-top:1px}
+    .siggrid{display:flex;gap:22px;align-items:flex-end;margin-top:6px}
+    .sigbox{flex:1;border-bottom:1px solid #111;min-height:62px;padding-bottom:3px}
+    .sigbox img{max-height:68px;max-width:100%}
+    .cap{font-size:8.2pt;color:#555;margin-top:3px}
+    .stamp{border:1px solid #0f5c4a;color:#0f5c4a;border-radius:4px;padding:5px 9px;font-size:8.2pt;text-align:center;line-height:1.4}
+    .foot{margin-top:13px;border-top:1px solid #ccc;padding-top:7px;font-size:7.3pt;color:#777}
+    .badge{display:inline-block;background:#eef7f4;color:#0f5c4a;border:1px solid #d8ece5;border-radius:3px;padding:1px 7px;font-size:8pt;margin-top:5px}
+    .checks span{display:inline-block;margin-right:14px;font-size:8.8pt}
+    .box{display:inline-block;width:9px;height:9px;border:1px solid #333;margin-right:4px;vertical-align:-1px;text-align:center;line-height:8px;font-size:8px}
+    .box.on{background:#0f5c4a;border-color:#0f5c4a;color:#fff}
+  </style></head><body>
+  <div class="hd">
+    <div><h1>${isCat ? 'Cat Grooming Waiver &amp; Consent Form' : 'Pet Service Waiver &amp; Consent Form'}<span class="cn">宠物服务免责声明与同意书（${petNounZh}）</span></h1>
+      <div style="font-size:10pt;color:#0f5c4a;font-weight:700;margin-top:5px">CuteSource</div></div>
+    <div class="ref"><span>Customer ID</span><b>${esc(o.id)}</b>
+      <div style="margin-top:3px">Signed ${esc(fmtDateTime(o.createdAt))}</div>
+      <div>Version ${esc(o.version || VERSION)}</div></div>
+  </div>
+  <div class="badge">Signed once · Valid ongoing / 已签署 · 长期有效 · ${isCat ? 'Cat 猫咪' : 'Dog 狗狗'}</div>
+
+  <h2>Owner / 主人</h2>
+  <table>
+    <tr><td class="k">Name</td><td>${esc(o.ownerName)}</td><td class="k">Mobile</td><td>${esc(o.mobile)}</td></tr>
+  </table>
+
+  <h2>${petHead}（${pets.length}）</h2>
+  <table class="pets">
+    <thead><tr><th style="width:15%">Name</th><th style="width:15%">Breed</th><th style="width:12%">Born</th>
+    <th style="width:9%">Sex</th><th style="width:11%">Weight</th><th style="width:10%">Neut.</th><th>Vaccination</th></tr></thead>
+    <tbody>${rows || '<tr><td colspan="7">—</td></tr>'}</tbody>
+  </table>
+
+  <h2>Declaration / 声明</h2>
+  <div class="checks">
+    <div><span class="box ${o.ck1?'on':''}">${o.ck1?'✓':''}</span>Read and agreed to all terms / 已阅读并同意全部条款</div>
+    <div><span class="box ${o.ck2?'on':''}">${o.ck2?'✓':''}</span>Information is true and complete / 信息真实完整</div>
+    <div><span class="box ${o.ck3?'on':''}">${o.ck3?'✓':''}</span>Owner or authorised representative / 主人或获授权代理人</div>
+    <div><span class="box ${o.ck4?'on':''}">${o.ck4?'✓':''}</span>Photo consent (optional) / 同意影像使用（可选）</div>
+  </div>
+
+  <h2>Terms / 条款</h2>
+  <div class="term">${termsHtml}</div>
+
+  <h2>Signature / 签名</h2>
+  <div class="siggrid">
+    <div style="flex:2"><div class="sigbox">${o.signature ? `<img src="${o.signature}" alt="signature">` : ''}</div>
+      <div class="cap">Owner's signature / 主人签名 · ${esc(o.ownerName)}</div></div>
+    <div class="stamp">E-SIGNED<br>电子签署<br><b>${esc(o.id)}</b></div>
+  </div>
+  <div class="foot">
+    This document was generated and signed electronically and is legally equivalent to a handwritten signature under the Electronic Transactions Act 2010 (Singapore).<br>
+    本文件由电子方式生成并签署，依新加坡《2010 年电子交易法》与手写签名具同等效力。<br>
+    Device: ${esc((o.ua || '').slice(0, 70))} · Printed: ${esc(fmtDateTime(new Date().toISOString()))}
+  </div>
+  <script>window.onload=function(){setTimeout(function(){window.print()},350)}<\/script>
+  </body></html>`;
+  w.document.open(); w.document.write(html); w.document.close();
+}
+$('#dlPdf').addEventListener('click', () => { if (lastSaved) printRecord(lastSaved); });
+
+/* ---------------- Boot ---------------- */
+const ro = new ResizeObserver(() => resizeCanvas(true));
+ro.observe($('#sigWrap'));
+window.addEventListener('orientationchange', () => setTimeout(() => resizeCanvas(true), 250));
+
+applyLang(LANG);
+setSpecies(SPECIES_KEY, { keepPets: true });
+addPet();
+resizeCanvas(false);
+updateSummary();
+
+/* 语言切换按钮 */
+$$('.lang-toggle button').forEach(b => b.addEventListener('click', () => applyLang(b.dataset.lang)));
+
+/* 迁移旧数据 */
+(function migrate() {
+  if (localStorage.getItem(STORE_KEY)) return;
+  let src = null;
+  for (const k of OLD_KEYS) {
+    try { const v = JSON.parse(localStorage.getItem(k) || '[]'); if (v && v.length) { src = v; break; } } catch {}
+  }
+  if (!src) return;
+  const by = new Map();
+  src.slice().reverse().forEach(r => {
+    const key = normPhone(r.mobile) || r.id;
+    const pets = (r.pets && r.pets.length ? r.pets : [{ name: r.petName, breed: r.breed, age: r.age, health: r.health, vaccine: r.vaccine }])
+      .map(p => ({
+        name: p.name || '', breed: p.breed || '', birth: p.birth || '',
+        sex: p.sex === '公 Male' ? 'M' : p.sex === '母 Female' ? 'F' : (p.sex === 'M' || p.sex === 'F' ? p.sex : ''),
+        age: p.age || '', health: p.health || '',
+        neutered: (p.neutered || '').startsWith('已') ? 'Y' : (p.neutered || '').startsWith('未') ? 'N' : (p.neutered || ''),
+        vaccine: (p.vaccine || '').includes('已完成') ? 'done' : (p.vaccine || '').includes('部分') ? 'partial' : (p.vaccine ? 'none' : '')
+      }));
+    if (!by.has(key)) by.set(key, {
+      id: 'CUS' + String(r.id || nowStamp()).replace(/^(PS|CUS)/, ''), createdAt: r.createdAt, ua: r.ua, version: 'migrated',
+      ownerName: r.ownerName, mobile: r.mobile, pets,
+      ck1: r.ck1, ck2: r.ck2, ck3: r.ck3, ck4: r.ck4, signature: r.signature
+    });
+  });
+  saveOwners(Array.from(by.values()).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
+})();
+</script>
+</body>
+</html>
